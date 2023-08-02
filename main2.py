@@ -6,8 +6,12 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LinearRegression
 import os
 
+# Get the absolute path using os.path.abspath()
+relative_path = "Data/covertype_train.csv"
+absolute_path = os.path.abspath(relative_path)
+
 # Load the dataset
-data = pd.read_csv('c:/Users/shawn/Documents/Forest Data/covertype_train.csv')
+data = pd.read_csv(absolute_path)
 
 # Choose a subset of features for both models
 selected_features = ['Elevation', 'Aspect', 'Slope', 'Horizontal_Distance_To_Hydrology']
